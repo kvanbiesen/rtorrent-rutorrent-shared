@@ -1,8 +1,11 @@
 # This is an example resource file for rTorrent. Copy to
 # ~/.rtorrent.rc and enable/modify the options as needed. Remember to
 # uncomment the options you wish to enable.
+network.scgi.open_local = /downloads/.rtorrent/socket
+system.method.set_key = event.download.resumed,foo,"execute.nothrow=rtcheck,$d.get_name=,$d.get_hash="
+system.method.set_key = event.download.finished,foo2,"execute.nothrow=rtcheck,$d.get_name=,$d.get_hash="
 
-scgi_port=127.0.0.1:5000
+#scgi_port=127.0.0.1:5000
 encoding_list = UTF-8
 
 log.open_file = "rtorrent.log", "/downloads/.log/rtorrent/rtorrent.log"
