@@ -80,7 +80,7 @@ server {
 
 	location /RPC2 {
         	include scgi_params;
-	        scgi_pass 127.0.0.1:5000;
+	        scgi_pass unix:/downloads/.rtorrent/socket;
                 scgi_param SCRIPT_NAME /RPC2;
 	}
 
