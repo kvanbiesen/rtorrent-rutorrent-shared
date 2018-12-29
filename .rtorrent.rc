@@ -4,6 +4,8 @@
 network.scgi.open_local = /downloads/.rtorrent/socket
 system.method.set_key = event.download.resumed,foo,"execute.nothrow=rtcheck,$d.get_name=,$d.get_hash="
 system.method.set_key = event.download.finished,foo2,"execute.nothrow=rtcheck,$d.get_name=,$d.get_hash="
+schedule = scgi_permission,0,0,"execute.nothrow=chmod,\"g+w,o=\",/downloads/.rtorrent/socket"
+
 
 #scgi_port=127.0.0.1:5000
 encoding_list = UTF-8
